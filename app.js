@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 require("dotenv").config();
-const port = 5000 || process.env.PORT;
+const port = 5000;
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" })); // Increase limit for JSON
