@@ -21,8 +21,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const mongodbUrl =
-  "mongodb+srv://vikaskumar7109nitrr:aVhwU9wxqQ1Go2XC@cluster0.eqe14gi.mongodb.net/database";
+const mongodbUrl = process.env.MONGODB_URL;
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
