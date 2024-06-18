@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 require("dotenv").config();
-const port = 5000;
+const port = 5000 || process.env.PORT;
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" })); // Increase limit for JSON
@@ -21,7 +21,8 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const mongodbUrl = process.env.MONGODB_URL;
+const mongodbUrl =
+  "mongodb+srv://vikaskumar7109nitrr:aVhwU9wxqQ1Go2XC@cluster0.eqe14gi.mongodb.net/database";
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
